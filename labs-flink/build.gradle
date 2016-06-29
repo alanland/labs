@@ -1,0 +1,6 @@
+dependencies {
+    compile "org.apache.flink:flink-java:${FLINK_VERSION}"
+    compile "org.apache.flink:flink-streaming-java_${SCALA_VERSION}:${FLINK_VERSION}"
+    compile "org.apache.flink:flink-clients_${SCALA_VERSION}:${FLINK_VERSION}"
+    compile "org.apache.flink:flink-connector-wikiedits_${SCALA_VERSION}:${FLINK_VERSION}"
+}

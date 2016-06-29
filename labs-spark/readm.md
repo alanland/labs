@@ -1,0 +1,1 @@
+-Dspark.deploy.defaultCores

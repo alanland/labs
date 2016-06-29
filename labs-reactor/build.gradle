@@ -1,0 +1,39 @@
+repositories {
+// maven { url 'http://repo.spring.io/release' }
+// maven { url 'http://repo.spring.io/milestone' }
+//    maven { url 'http://repo.spring.io/snapshot' }
+}
+
+apply plugin: 'war'
+
+ext {
+    spockVersion = '1.0-groovy-2.4'
+}
+
+dependencies {
+    //Core stuff (Flux, Mono, Schedulers...)
+    compile "io.projectreactor:reactor-core:2.5.0.M4"
+
+    //Everything Routing (Event Bus)
+    // 2.0.7.RELEASE
+    compile "io.projectreactor:reactor-bus:2.5.0.BUILD-SNAPSHOT"
+
+    //Netty TCP/HTTP/UDP client/servers
+//    compile "io.projectreactor:reactor-netty:2.5.0.BUILD-SNAPSHOT"
+//    compile "io.netty:netty-all:4.0.34.Final"
+
+    //Reactive Aeron client/servers
+//    compile "io.projectreactor:reactor-aeron:2.5.0.BUILD-SNAPSHOT"
+
+    // 测试程序需要 lite-rx-api-hands-on-master
+    testCompile "io.reactivex:rxjava:1.1.5"
+
+//    compile "org.springframework.boot:spring-boot-starter",
+//            "org.springframework:spring-web",
+//            "com.fasterxml.jackson.core:jackson-databind",
+//            "io.projectreactor:reactor-bus"
+
+//    testCompile "org.spockframework:spock-core:$spockVersion",
+//            "org.hamcrest:hamcrest-library:1.3",
+//            "org.testng:testng:6.8.5"
+}

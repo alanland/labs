@@ -1,0 +1,15 @@
+dependencies {
+    // http://mvnrepository.com/artifact/org.apache.spark/spark-core_2.11
+    // http://mvnrepository.com/artifact/org.scala-lang/scala-library
+    compile "org.apache.spark:spark-core_${SCALA_VERSION}:${SPARK_VERSION}"
+    compile "org.apache.spark:spark-sql_${SCALA_VERSION}:${SPARK_VERSION}"
+    compile "org.apache.spark:spark-streaming_${SCALA_VERSION}:${SPARK_VERSION}"
+    compile "org.apache.spark:spark-mllib_${SCALA_VERSION}:${SPARK_VERSION}"
+
+    compile "org.scala-lang:scala-library:${SCALA_FULL_VERSION}" // 2.11.8 / 2.10.6
+    compile "org.scala-lang:scala-compiler:${SCALA_FULL_VERSION}"
+
+    compile 'com.fasterxml.jackson.module:jackson-module-scala_2.10:2.6.4',
+            'com.fasterxml.jackson.core:jackson-databind:2.6.4'
+
+}
