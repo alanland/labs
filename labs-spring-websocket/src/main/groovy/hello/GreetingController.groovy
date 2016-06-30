@@ -12,7 +12,7 @@ import org.springframework.stereotype.Controller
 @Controller
 public class GreetingController {
 
-    @MessageMapping("/hello")
+    @MessageMapping("/hello2")
     @SendTo("/topic/greetings")
     public Greeting greeting(HelloMessage message) throws Exception {
         Thread.sleep(500); // simulated delay

@@ -17,12 +17,14 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
         config.enableSimpleBroker("/topic");
+        // js: stompClient.send('/app/${controller message mapping}')
         config.setApplicationDestinationPrefixes("/app");
     }
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/hello").withSockJS();
+        // js: new SockJs('/endpoint')
+        registry.addEndpoint("/endpoint").withSockJS();
     }
 
 }
