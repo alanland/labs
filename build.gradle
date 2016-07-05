@@ -73,6 +73,7 @@ allprojects {
 //        compile "org.springframework.boot:spring-boot-starter-web"
         compile "org.scala-lang:scala-library:${SCALA_FULL_VERSION}" // 2.11.8 / 2.10.6
         compile "org.scala-lang:scala-compiler:${SCALA_FULL_VERSION}"
+        compile "org.codehaus.groovy:groovy-all:2.4.4"
 //        compile("org.springframework.boot:spring-boot-starter-tomcat")
 //        compile 'org.mongodb:mongo-java-driver:3.2.2'
 

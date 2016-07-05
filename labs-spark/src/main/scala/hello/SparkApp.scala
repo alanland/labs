@@ -1,7 +1,5 @@
 package hello
 
-import org.apache.spark._
-
 /**
   * @author 王成义
   * @version 6/29/16
@@ -13,4 +11,5 @@ trait SparkApp extends App {
     .setMaster(master)
     .setAppName("Spark Pie")
   val spark = new SparkContext(conf)
+  val sc = spark
 }

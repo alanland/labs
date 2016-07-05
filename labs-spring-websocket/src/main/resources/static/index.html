@@ -23,6 +23,9 @@
                 stompClient.subscribe('/topic/greetings', function (greeting) {
                     showGreeting(JSON.parse(greeting.body).content);
                 });
+                stompClient.subscribe('/topic/greetings', function (greeting) {
+                    showGreeting(JSON.parse(greeting.body).content);
+                });
             });
         }
 
@@ -36,7 +39,7 @@
 
         function sendName() {
             var name = document.getElementById('name').value;
-            stompClient.send("/app/hello2", {}, JSON.stringify({'name': name}));
+            stompClient.send("/app/hello2", {db: 'xoms'}, JSON.stringify({'name': name}));
         }
 
         function sendName2() {
