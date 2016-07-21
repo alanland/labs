@@ -1,4 +1,4 @@
-package hello
+package hello.web
 
 import org.springframework.context.annotation.Configuration
 import org.springframework.messaging.simp.config.MessageBrokerRegistry
@@ -16,9 +16,15 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
-        config.enableSimpleBroker("/topic");
+//        config.enableSimpleBroker("/topic");
         // js: stompClient.send('/app/${controller message mapping}')
         config.setApplicationDestinationPrefixes("/app");
+
+
+
+        config.enableStompBrokerRelay("/topic", "/queue")
+//                .setRelayHost("localhost") // broker host
+//                .setRelayPort(61613) // broker port
     }
 
     @Override

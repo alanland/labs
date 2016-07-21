@@ -1,5 +1,6 @@
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-websocket")
     compile("org.springframework:spring-messaging")
+    compile 'redis.clients:jedis:2.5.1'
     testCompile("junit:junit")
 }

@@ -1,4 +1,4 @@
-package hello
+package hello.model
 
 /**
  * @author 王成义

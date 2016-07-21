@@ -1,5 +1,7 @@
-package hello
+package hello.controller
 
+import hello.model.Greeting
+import hello.model.HelloMessage
 import org.springframework.messaging.handler.annotation.DestinationVariable
 import org.springframework.messaging.handler.annotation.MessageMapping
 import org.springframework.messaging.handler.annotation.SendTo
