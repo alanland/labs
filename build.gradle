@@ -30,6 +30,7 @@ allprojects {
 
     repositories {
         maven { url "${nexusUrl}/content/groups/public/" }
+        maven { url 'http://repo.spring.io/libs-snapshot' }
         maven { url "http://repo.spring.io/libs-release" }
     }
 

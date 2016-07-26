@@ -19,6 +19,13 @@ public class GreetingController {
     @SendTo("/topic/greetings")
     public Greeting greeting2(StompHeaderAccessor header, HelloMessage message) throws Exception {
         Thread.sleep(500); // simulated delay
+        return new Greeting("msg, " + message.getName() + "!");
+    }
+
+    @MessageMapping("/msg/{to}")
+    @SendTo("/topic/msg/{to}")
+    public Greeting greeting2(StompHeaderAccessor header, HelloMessage message,  @DestinationVariable String to) throws Exception {
+        Thread.sleep(500); // simulated delay
         return new Greeting("Hello2, " + message.getName() + "!");
     }
 

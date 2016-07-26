@@ -1,5 +1,8 @@
 package hello
 
+import hello.util.SerializeUtil
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
 import redis.clients.jedis.Jedis
 import redis.clients.jedis.JedisPool
@@ -14,6 +17,8 @@ import javax.annotation.PostConstruct
  */
 @Service
 class RedisService {
+
+    protected final static Logger logger = LoggerFactory.getLogger(getClass().class);
 
     JedisPool pool
 
@@ -35,8 +40,8 @@ class RedisService {
                     'localhost',
                     6379,
                     3000,
-                    'ttx2011',
-                    0
+                    null,//'ttx2011',
+                    1
             );
         } catch (Exception e) {
             e.printStackTrace()
@@ -120,7 +125,8 @@ class RedisService {
                 try {
                     jedis.set(key.trim().bytes, SerializeUtil.serialize(o))
                 } catch (Throwable e) {
-                    logger.error(StackTraceHelper.getStackTrace(e))
+                    e.printStackTrace()
+                    logger.error(e.toString())
                 }
             }
         } catch (JedisConnectionException e) {

@@ -4,6 +4,6 @@ rootProject.name = "labs"
 //include 'labs-flink'
 //include 'labs-spark'
 //include 'labs-reactor'
-//include 'labs-spring-websocket'
+include 'labs-spring-websocket'
 include 'labs-quartz'
 

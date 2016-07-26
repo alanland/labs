@@ -14,16 +14,26 @@
             document.getElementById('response').innerHTML = '';
         }
 
+        function getUser() {
+            return document.getElementById('user').value;
+        }
+        function getParams() {
+            return {user: getUser(), db: 'xoms'};
+        }
+
         function connect() {
             var socket = new SockJS('/endpoint');
             stompClient = Stomp.over(socket);
-            stompClient.connect({}, function (frame) {
+            stompClient.connect(getParams(), function (frame) {
                 setConnected(true);
                 console.log('Connected: ' + frame);
-                stompClient.subscribe('/topic/greetings', function (greeting) {
-                    showGreeting(JSON.parse(greeting.body).content);
-                });
-                stompClient.subscribe('/topic/greetings', function (greeting) {
+//                stompClient.subscribe('/topic/greetings', function (greeting) {
+//                    showGreeting(JSON.parse(greeting.body).content);
+//                });
+//                stompClient.subscribe('/topic/greetings', function (greeting) {
+//                    showGreeting(JSON.parse(greeting.body).content);
+//                });
+                stompClient.subscribe('/topic/msg/' + getUser(), function (greeting) {
                     showGreeting(JSON.parse(greeting.body).content);
                 });
             });
@@ -37,14 +47,19 @@
             console.log("Disconnected");
         }
 
+        function sendMsg() {
+            var name = document.getElementById('name').value;
+            stompClient.send("/app/msg/" + getUser(), getParams(), JSON.stringify({'name': name}));
+        }
+
         function sendName() {
             var name = document.getElementById('name').value;
-            stompClient.send("/app/hello2", {db: 'xoms'}, JSON.stringify({'name': name}));
+            stompClient.send("/app/hello2", getParams(), JSON.stringify({'name': name}));
         }
 
         function sendName2() {
             var name = document.getElementById('name').value;
-            stompClient.send("/app/hello3", {}, JSON.stringify({'name': name}));
+            stompClient.send("/app/hello3", getParams(), JSON.stringify({'name': name}));
         }
 
         function showGreeting(message) {
@@ -61,13 +76,15 @@
     enabled. Please enable
     Javascript and reload this page!</h2></noscript>
 <div>
+    <input type="text" id="user"/>
     <div>
         <button id="connect" onclick="connect();">Connect</button>
         <button id="disconnect" disabled="disabled" onclick="disconnect();">Disconnect</button>
     </div>
     <div id="conversationDiv">
         <label>What is your name?</label><input type="text" id="name"/>
-        <button id="sendName" onclick="sendName();">Send</button>
+        <button id="sendMsg" onclick="sendMsg();">SendMsg</button>
+        <button id="sendName" onclick="sendName();">Send1</button>
         <button id="sendName2" onclick="sendName2();">Send2</button>
         <p id="response"></p>
     </div>
