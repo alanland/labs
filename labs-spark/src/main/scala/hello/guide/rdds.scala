@@ -1,5 +1,7 @@
 package hello.guide
 
+import hello.SparkApp
+
 /**
   * @author 王成义
   * @version 6/29/16
