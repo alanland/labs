@@ -15,7 +15,7 @@ object HelloStreaming extends App {
   val lines = ssc.socketTextStream("localhost", 9999, StorageLevel.MEMORY_AND_DISK_SER)
   val words = lines.flatMap(_.split(" "))
   val wordCounts = words.map(x => (x, 1)).reduceByKey(_ + _)
-  wordCounts.print()
+  wordCounts.print
   ssc.start()
   ssc.awaitTermination()
 }
