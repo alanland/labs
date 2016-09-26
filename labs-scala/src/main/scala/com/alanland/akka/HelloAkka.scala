@@ -1,4 +1,4 @@
-package com.alanland.redis.service.com.alanland.akka
+package com.alanland.akka
 
 import akka.actor.{Actor, ActorRef, ActorSystem, Inbox, Props}
 
