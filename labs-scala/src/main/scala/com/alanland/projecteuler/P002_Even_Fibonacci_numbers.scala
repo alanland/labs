@@ -12,7 +12,7 @@ package com.alanland.projecteuler
   * @author 王成义
   * @version 9/29/16
   */
-object P002Even_Fibonacci_numbers extends App {
+object P002_Even_Fibonacci_numbers extends App {
   val max = 4000000
 
   val fib: Stream[Long] = {

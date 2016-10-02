@@ -10,7 +10,7 @@ package com.alanland.projecteuler
   * @author 王成义
   * @version 9/29/16
   */
-object P001Multiples_of_3_and_5 extends App {
+object P001_Multiples_of_3_and_5 extends App {
 
   var sum = 0
   val list = (0 until 1000).toList

@@ -10,7 +10,7 @@ package com.alanland.projecteuler
   * @author 王成义
   * @version 9/29/16
   */
-object P003Largest_prime_factor extends App {
+object P003_Largest_prime_factor extends App {
   val number = 600851475143l
 
   def findPrime(n: Long, list: List[Long] = List()): List[Long] = {

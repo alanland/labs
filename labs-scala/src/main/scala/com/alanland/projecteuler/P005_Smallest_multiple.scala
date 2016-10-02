@@ -10,7 +10,7 @@ package com.alanland.projecteuler
   * @author 王成义
   * @version 9/30/16
   */
-object P005Smallest_multiple extends App {
+object P005_Smallest_multiple extends App {
   val numbers = (1l to 20).toList.reverse
 
   def gcd(a: Long, b: Long): Long = if (b == 0) a.abs else gcd(b, a % b)
