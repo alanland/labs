@@ -1,11 +1,13 @@
 rootProject.name = "labs"
 
-//include 'labs-scala'
+include 'labs-scala'
+include 'labs-spark'
 //include 'labs-flink'
-//include 'labs-spark'
 //include 'labs-reactor'
 //include 'labs-spring-websocket'
 //include 'labs-quartz'
 //include 'labs-spring-cloud'
-include 'labs-springboot'
+//include 'labs-springboot'
+//include 'labs-springboot-event1'
+//include 'labs-springboot-event2'
 

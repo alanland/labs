@@ -25,7 +25,7 @@ public class AsyncEventsExampleTests {
         todoEventProducer.create("foo");
 
         // A chance to see the logging message produced by LoggingErrorHandler before the JVM exists.
-        Thread.sleep(1000);
+        Thread.sleep(100000);
 
         LOGGER.info("Finished publishing event");
     }
