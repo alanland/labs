@@ -9,7 +9,7 @@ spring.mail:
   host: smtp.exmail.qq.com # SMTP server host. For instance `smtp.example.com`
   jndi-name:  # Session JNDI name. When set, takes precedence to others mail settings.
   username: awang@ittx.com.cn # Login user of the SMTP server.
-  password: Chengyi.1 # Login password of the SMTP server.
+  password:  # Login password of the SMTP server.
   port: 465 # SMTP server port.
   properties.*:  # Additional JavaMail session properties.
   protocol: smtp # Protocol used by the SMTP server.
