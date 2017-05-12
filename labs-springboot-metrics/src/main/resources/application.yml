@@ -1,0 +1,44 @@
+
+server:
+  port: 8888
+
+
+# Email (MailProperties)
+spring.mail:
+  default-encoding: UTF-8 # Default MimeMessage encoding.
+  host: smtp.exmail.qq.com # SMTP server host. For instance `smtp.example.com`
+  jndi-name:  # Session JNDI name. When set, takes precedence to others mail settings.
+  username: awang@ittx.com.cn # Login user of the SMTP server.
+  password: Chengyi.1 # Login password of the SMTP server.
+  port: 465 # SMTP server port.
+  properties.*:  # Additional JavaMail session properties.
+  protocol: smtp # Protocol used by the SMTP server.
+  test-connection: false # Test that the mail server is available on startup.
+
+# Admin (AdminProperties)
+spring.boot.admin:
+  username: admin
+  password: admin
+  notify.mail:
+    to: awang@ittx.com.cn
+    from: awang@ittx.com.cn
+
+# Admin Client
+spring.boot.admin.url: http://localhost:8888
+#management.security.enabled: false
+
+
+# REDIS (RedisProperties)
+spring.redis:
+  database: 0 # Database index used by the connection factory.
+#  url:  # Connection URL, will override host, port and password (user will be ignored), e.g. redis://user:password@example.com:6379
+  host: localhost # Redis server host.
+  password: ttx2011 # Login password of the redis server.
+  ssl: false # Enable SSL support.
+  pool:
+    max-active: 8 # Max number of connections that can be allocated by the pool at a given time. Use a negative value for no limit.
+    max-idle: 8 # Max number of "idle" connections in the    Use a negative value to indicate an unlimited number of idle connections.
+    max-wait: -1 # Maximum amount of time (in milliseconds) a connection allocation should block before throwing an exception when the pool is exhausted. Use a negative value to block indefinitely.
+    min-idle: 0 # Target for the minimum number of idle connections to maintain in the    This setting only has an effect if it is positive.
+  port: 6379 # Redis server port.
+  timeout: 0 # Connection timeout in m

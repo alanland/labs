@@ -2,6 +2,7 @@ package com.zoltanaltfatter.events.async1;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Bean;
@@ -11,10 +12,16 @@ import org.springframework.context.event.SimpleApplicationEventMulticaster;
 import org.springframework.core.task.SimpleAsyncTaskExecutor;
 import org.springframework.scheduling.support.TaskUtils;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.WebApplicationContext;
 
 @SpringBootApplication
 class AsyncEventsExample {
 
+    public static void main(String[] args) throws Exception {
+        WebApplicationContext ctx= (WebApplicationContext) SpringApplication.run(AsyncEventsExample.class, args);
+        TodoEventProducer producer = ctx.getBean(TodoEventProducer.class);
+        producer.create("asotehuaotehu");
+    }
     static final Logger logger = LoggerFactory.getLogger(AsyncEventsExample.class);
 
     // tell Spring to handle events asynchronously (not in the caller's thread) by redefining the
@@ -80,6 +87,10 @@ class AsyncEventsExample {
         public void create(String todo) {
             logger.info("thread '{}' creating todo '{}'", Thread.currentThread(), todo);
             publisher.publishEvent(new TodoCreatedEvent(todo));
+            int a = 1;
+            if (a==1){
+                System.out.println();
+            }
         }
 
     }
