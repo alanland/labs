@@ -15,30 +15,6 @@ spring.mail:
   protocol: smtp # Protocol used by the SMTP server.
   test-connection: false # Test that the mail server is available on startup.
 
-# Admin Server
-#security.user:
-#  name: admin
-#  password: admin
-#management.security.roles: SUPERUSER
-
-# Admin (AdminProperties)
-spring.boot.admin:
-  username: admin
-  password: admin
-  notify.mail:
-    to: awang@ittx.com.cn
-    from: awang@ittx.com.cn
-  routes.endpoints: env,metrics,trace,dump,jolokia,info,configprops,trace,\
-      logfile,refresh,flyway,liquibase,heapdump,loggers,auditevents,\
-      hystrix.stream,activiti
-  turbine:
-    clusters: default
-    location: turbine
-
-# Admin Client
-spring.boot.admin.url: http://localhost:8888
-#management.security.enabled: false
-
 
 # REDIS (RedisProperties)
 spring.redis:

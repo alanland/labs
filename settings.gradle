@@ -12,5 +12,6 @@ rootProject.name = "labs"
 //include 'labs-springboot-event1'
 //include 'labs-springboot-event2'
 
-include 'labs-springboot-metrics'
+//include 'labs-springboot-metrics'
+include 'labs-springboot-prometheus'
 
