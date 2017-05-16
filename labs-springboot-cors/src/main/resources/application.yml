@@ -1,0 +1,34 @@
+spring.profiles.active: ssl
+
+server.tomcat.access-log-enabled: true
+spring.datasource.sql-script-encoding: utf-8
+
+multipart:
+  #meaning total file size cannot exceed 128KB.
+  maxFileSize: 2048KB
+  #meaning total request size for a multipart/form-data cannot exceed 128KB.
+  maxRequestSize: 2048KB
+
+spring.http.multipart:
+  max-file-size: 1Mb
+  max-request-size: 10Mb
+
+
+server:
+  port: 30005
+
+---
+
+spring:
+  profiles: dev
+server:
+  port: 30005
+
+---
+
+spring:
+  profiles: prod
+server:
+  port: 30005
+
+

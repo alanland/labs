@@ -1,0 +1,39 @@
+baseDir: ./
+report:
+  reportFilePath: /home/alan/JaspersoftWorkspace/AlanReport/ # ${baseDir}/reports/ #/tmp/groovy/
+  tmpFilePath: ${baseDir}/tmp/
+  printer: ${baseDir}/config.json
+
+mongo:
+    host: localhost
+    port: 27017
+    database: edi
+    user:
+    password:
+    connectionsPerHost: 100
+
+crossOrigins:
+# Email
+spring:
+    mail:
+        host: smtp.exmail.qq.com
+        port: 25
+        username: oms@bubugao.com
+        password: xxx
+        default-encoding: UTF-8
+        properties.*:
+
+server:
+  ssl:
+    key-store: classpath:keystore.p12
+    key-store-password: ttx2011
+    keyStoreType: PKCS12
+    keyAlias: tomcat
+
+endpoints.cors:
+  allow-credentials: true # Set whether credentials are supported. When not set, credentials are not supported.
+  allowed-headers: '*'  # Comma-separated list of headers to allow in a request. '*' allows all headers.
+  allowed-methods: GET # Comma-separated list of methods to allow. '*' allows all methods.
+  allowed-origins: '*'  # Comma-separated list of origins to allow. '*' allows all origins. When not set, CORS support is disabled.
+  exposed-headers:  # Comma-separated list of headers to include in a response.
+  max-age: 1800 # How long, in seconds, the response from a pre-flight request can be cached by clients.
